@@ -4,15 +4,16 @@ dotenv.config();
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import User from "./models/User.js"; 
+import path from "path";
+import { fileURLToPath } from "url";
+import User from "./models/User.js";
 
 const app = express();
 const PORT = 8080;
+const DbUrl = process.env.MONGO_URI;
 
 app.use(express.json());
 app.use(cors());
-
-const DbUrl = process.env.MONGO_URI;
 
 // Database Connection
 main()
@@ -23,12 +24,24 @@ async function main() {
   await mongoose.connect(DbUrl);
 }
 
-// Test Route
-app.get("/", (req, res) => {
-  res.send(" Backend is working!");
+// Get directory paths (needed for serving static files)
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// 🚀 Serve static frontend files
+app.use(express.static(path.join(__dirname, "../frontend")));
+
+// 🏠 Serve frontend for any unknown route
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend", "portfolio.html")); // Change "portfolio.html" to "index.html" if needed
 });
 
-// Contact Form API
+// ✅ Test Route
+app.get("/api", (req, res) => {
+  res.send("Backend is working!");
+});
+
+// 📩 Contact Form API
 app.post("/contact", async (req, res) => {
   console.log("Received a request on /contact", req.body);
 
@@ -49,9 +62,10 @@ app.post("/contact", async (req, res) => {
   }
 });
 
-// Start Server
+// 🚀 Start Server
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
+
 
 
