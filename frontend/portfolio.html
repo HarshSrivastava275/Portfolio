@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Document</title>
+  <link rel="stylesheet" href="portfolio.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+  <div id="header">
+    <div class="container">
+      <nav>
+        <img src="logo.jpg" class="logo">
+        <ul id="sidemenu">
+          <li><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <i class="fa-regular fa-circle-xmark fas" onclick="closemenu()"></i>
+        </ul>
+        
+        <i class="fa-solid fa-bars fas" onclick="openmenu()"></i>
+
+      </nav>
+      <div class="header-text">
+        <p>Full Stack Developer | React | Node.js | MongoDB</p>
+        <h1>Hi, I'm <span>Harsh Srivastava</span> <br> Building Scalable & Modern Web Applications</h1>
+    </div>
+    </div>
+  </div>
+
+
+  <!-- -----about------ -->
+<div id="about">
+  <div class="container">
+    <div class="row">
+      <div class="about-col-1">
+        <img src="tech4.jpg">
+      </div>
+      <div class="about-col-2">
+      <h1 class="sub-title">About Me</h1>
+      <p>Hello! I am Harsh Srivastava, a passionate full-stack developer currently pursuing a B.Tech in Computer Science from Babu Banarasi Das Engineering College (AKTU, Lucknow).
+        I specialize in web development using the MERN stack and have built several real-world applications, including a full-stack Airbnb clone and a stock trading platform (in progress).
+        As a freelancer, I take on projects that require creative, scalable, and efficient solutions. My expertise includes:
+        
+        Frontend Development: React.js, HTML, CSS, Tailwind CSS
+        
+        Backend Development: Node.js, Express.js, REST APIs
+        
+        Database Management: MongoDB, MySQL
+        
+        Version Control & Deployment: Git, GitHub, Vercel, Netlify
+        
+        Whether you need a website, web app, or a complete full-stack solution, I'm here to help. Let's create something amazing together! 🚀</p>
+      
+        <div class="tab-titles">
+          <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+          <p class="tab-links" onclick="opentab('experience')">Experience</p>
+          <p class="tab-links" onclick="opentab('education')">Education</p>
+
+
+        </div>
+        <div class="tab-contents active-tab" id="skills">
+          <ul>
+              <li><span>Full-Stack Development</span><br>Building dynamic web applications using MERN stack</li>
+              <li><span>Frontend Development</span><br>Creating responsive and user-friendly interfaces with React.js, HTML, CSS, Tailwind CSS</li>
+              <li><span>Backend Development</span><br>Developing secure REST APIs and server-side logic using Node.js & Express.js</li>
+              <li><span>Database Management</span><br>Working with MongoDB & MySQL for efficient data storage</li>
+              <li><span>Freelancing</span><br>Providing professional web development solutions for clients</li>
+          </ul>
+      </div>
+      
+      <div class="tab-contents" id="experience">
+        <ul>
+            <li><span>2024 - Present</span><br>Freelance Full-Stack Developer (MERN Stack)</li>
+            <li><span>2024 - Present</span><br>Developing a Stock Trading Platform (Zerodha-like)</li>
+            <li><span>2023 - 2024</span><br>Built an Airbnb Clone (Full-Stack Web App)</li>
+            <li><span>2024 - Present</span><br>Developed a To-Do List Application using React</li>
+        </ul>
+    </div>
+    
+        <div class="tab-contents" id="education">
+          <ul>
+            <li><span>2019</span><br>10th From Raj English School</li>
+            <li><span>2021</span><br>12th From Raj English School</li>
+            <li><span>2022</span><br >Btech From BBD Lucknow</li>
+          </ul>
+        </div>
+     </div>
+    </div>
+  </div>
+</div>
+<!-- -------services--------- -->
+<div id="services">
+  <div class="container">
+    <h1 class="sub-title">My Services</h1>
+    <div class="services-list">
+      <div>
+        <h2>Full-Stack Web Development</h2>
+        <p>I build scalable and high-performance web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js). 
+           From frontend to backend, I create complete solutions tailored to your needs.</p>
+        <a href="#">Learn More</a>
+    </div>
+    <div>
+        <h2>Frontend Development</h2>
+        <p>Crafting modern, responsive, and user-friendly web interfaces using React.js, HTML, CSS, and Tailwind CSS.
+           I ensure smooth user experiences and mobile-friendly designs.</p>
+        <a href="#">Learn More</a>
+    </div>
+    <div>
+        <h2>Backend Development</h2>
+        <p>Building secure and efficient server-side applications using Node.js, Express.js, and REST APIs. 
+           I integrate databases like MongoDB and MySQL to ensure smooth data management.</p>
+        <a href="#">Learn More</a>
+    </div>
+    <div>
+        <h2>Freelancing & Custom Projects</h2>
+        <p>Need a custom web application, portfolio website, or business platform? 
+           I offer freelance services to help you turn your ideas into reality.</p>
+        <a href="#">Contact Me</a>
+    </div>
+    
+    </div>
+  </div>
+</div>
+
+<!-- -----------portfolio----------- -->
+<div id="portfolio">
+  <div class="container">
+    <h1 class="sub-title">My Work</h1>
+    <div class="work-list">
+      <div class="work">
+        <img src="tech3.jpg">
+        <div class="layer">
+            <h3>Airbnb Clone</h3>
+            <p>A full-stack Airbnb clone with authentication, property listings, and booking functionality.</p>
+            <a href="https://github.com/HarshSrivastava275/Major-Project" target="_blank"><span>&#10138;</span></a>
+        </div>
+    </div>
+    <div class="work">
+        <img src="tech2.jpg">
+        <div class="layer">
+            <h3>Stock Trading Platform (In Progress)</h3>
+            <p>Developing a Zerodha-like stock trading platform with real-time market data and user portfolios.</p>
+            <a href="#"><span>&#10138;</span></a>
+        </div>
+    </div>
+    <div class="work">
+        <img src="tech.jpg">
+        <div class="layer">
+            <h3>To-Do List App</h3>
+            <p>A simple and interactive To-Do List app built using React.js to manage daily tasks efficiently.</p>
+            <a href="#"><span>&#10138;</span></a>
+        </div>
+    </div>
+    
+    </div>
+    <a href="#" class="btn">See more</a>
+  </div>
+</div>
+
+<!-- -----contact----- -->
+<div id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="contact-left">
+        <h1 class="sub-title">Contact Me</h1>
+        <p><i class="fa-solid fa-envelope"></i>harshsri987654@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i>9129711078</p>
+        <div class="social-icon">
+          <a href="https://www.facebook.com/profile.php?id=100029977267268"><i class="fa-brands fa-facebook"></i></a>
+          <a href="https://www.instagram.com/mr_harsh_sri/?next=%2F&hl=en"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://x.com/mr_harsh_sri"><i class="fa-brands fa-twitter"></i></a>
+          <a href="https://github.com/HarshSrivastava275"><i class="fa-brands fa-github"></i></a>
+        </div>
+        <a href="myCV.pdf" download class="btn btn2">Download</a>
+      </div>
+      <div class="contact-right">
+        <form id="contactForm">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+          <textarea id="message" name="message" rows="6" placeholder="Your Message"></textarea>
+          <button type="submit" class="btn btn2">Submit</button>
+      </form>
+      
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>copyright © Harsh . Made with <i class="fa-solid fa-heart"></i> by Easy Ways</p>
+  </div>
+</div>
+
+  <script src="portfolio.js">
+    
+  </script>
+</body>
+</html>
