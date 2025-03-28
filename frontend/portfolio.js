@@ -22,14 +22,14 @@ function closemenu(){
 }
 
 document.getElementById("contactForm").addEventListener("submit", async function(event) {
-    event.preventDefault(); // ✅ Prevent page reload on form submission
+    event.preventDefault();  
 
-    // ✅ Get input values
+    
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    // ❌ Validate form inputs
+    
     if (!name || !email || !message) {
         alert("Please fill in all fields.");
         return;
@@ -38,26 +38,26 @@ document.getElementById("contactForm").addEventListener("submit", async function
     console.log("Submitting Form Data:", { name, email, message });
 
     try {
-        // ✅ Corrected API endpoint
-        const response = await fetch("http://localhost:8080/contact", { // Change to your deployed URL
+        
+        const response = await fetch("https://portfolio-vr3x.onrender.com", { 
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name, email, message })
         });
 
-        // ✅ Handle response properly
+         
         const data = await response.json();
         console.log("Server Response:", data);
 
         if (response.ok) {
-            alert("Your message has been sent successfully!"); // ✅ Show success message
-            document.getElementById("contactForm").reset(); // ✅ Clear form after success
+            alert("Your message has been sent successfully!"); 
+            document.getElementById("contactForm").reset(); 
         } else {
-            alert("Failed to send message: " + data.message); // ❌ Show error message
+            alert("Failed to send message: " + data.message); 
         }
 
     } catch (error) {
-        console.error("❌ Error submitting form:", error);
+        console.error("Error submitting form:", error);
         alert("Failed to send message. Please try again later.");
     }
 });
